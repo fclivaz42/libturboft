@@ -6,7 +6,7 @@
 #    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 00:27:54 by fclivaz           #+#    #+#              #
-#    Updated: 2024/11/05 00:38:00 by fclivaz          ###   LAUSANNE.ch        #
+#    Updated: 2024/11/05 03:14:50 by fclivaz          ###   LAUSANNE.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,16 @@ SRCS	=	${SUBDIR}/char/ft_isalnum.c \
 				${SUBDIR}/lst/ft_lstmap.c \
 				${SUBDIR}/lst/ft_lstnew.c \
 				${SUBDIR}/lst/ft_lstsize.c \
+			${SUBDIR}/malloc/ft_arrayfree.c \
+				${SUBDIR}/malloc/ft_calloc.c \
+				${SUBDIR}/malloc/ft_itoa.c \
+				${SUBDIR}/malloc/ft_realloc.c \
+				${SUBDIR}/malloc/ft_split.c \
+				${SUBDIR}/malloc/ft_strdup.c \
+				${SUBDIR}/malloc/ft_strjoin.c \
+				${SUBDIR}/malloc/ft_strmapi.c \
+				${SUBDIR}/malloc/ft_strtrim.c \
+				${SUBDIR}/malloc/ft_substr.c \
 			${SUBDIR}/mem/ft_memchr.c \
 				${SUBDIR}/mem/ft_memcmp.c \
 				${SUBDIR}/mem/ft_memcpy.c \
@@ -46,15 +56,7 @@ SRCS	=	${SUBDIR}/char/ft_isalnum.c \
 				${SUBDIR}/str/ft_strlen.c \
 				${SUBDIR}/str/ft_strncmp.c \
 				${SUBDIR}/str/ft_strnstr.c \
-				${SUBDIR}/str/ft_strrchr.c \
-			${SUBDIR}/malloc/ft_calloc.c \
-				${SUBDIR}/malloc/ft_itoa.c \
-				${SUBDIR}/malloc/ft_split.c \
-				${SUBDIR}/malloc/ft_strdup.c \
-				${SUBDIR}/malloc/ft_strjoin.c \
-				${SUBDIR}/malloc/ft_strmapi.c \
-				${SUBDIR}/malloc/ft_strtrim.c \
-				${SUBDIR}/malloc/ft_substr.c
+				${SUBDIR}/str/ft_strrchr.c
 
 SUBDIR	=	srcs
 

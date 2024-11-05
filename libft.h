@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/05 02:38:25 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2024/11/05 03:17:03 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /// --- MALLOC --- ///
 
+void	ft_arrayfree(void *array);
+void	*ft_realloc(void *str, size_t add, size_t bsize);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
