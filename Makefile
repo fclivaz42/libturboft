@@ -1,58 +1,81 @@
-SUBDIR	= srcs
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/05 00:27:54 by fclivaz           #+#    #+#              #
+#    Updated: 2024/11/05 00:38:00 by fclivaz          ###   LAUSANNE.ch        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJDIR	= objs
+SRCS	=	${SUBDIR}/char/ft_isalnum.c \
+				${SUBDIR}/char/ft_isalpha.c \
+				${SUBDIR}/char/ft_isascii.c \
+				${SUBDIR}/char/ft_isdigit.c \
+				${SUBDIR}/char/ft_isprint.c \
+				${SUBDIR}/char/ft_tolower.c \
+				${SUBDIR}/char/ft_toupper.c \
+			${SUBDIR}/extras/ft_gnl.c \
+				${SUBDIR}/extras/ft_printf.c \
+			${SUBDIR}/lst/ft_lstadd_back.c \
+				${SUBDIR}/lst/ft_lstadd_front.c \
+				${SUBDIR}/lst/ft_lstclear.c \
+				${SUBDIR}/lst/ft_lstdelone.c \
+				${SUBDIR}/lst/ft_lstiter.c \
+				${SUBDIR}/lst/ft_lstlast.c \
+				${SUBDIR}/lst/ft_lstmap.c \
+				${SUBDIR}/lst/ft_lstnew.c \
+				${SUBDIR}/lst/ft_lstsize.c \
+			${SUBDIR}/mem/ft_memchr.c \
+				${SUBDIR}/mem/ft_memcmp.c \
+				${SUBDIR}/mem/ft_memcpy.c \
+				${SUBDIR}/mem/ft_memmove.c \
+				${SUBDIR}/mem/ft_memset.c \
+			${SUBDIR}/putfd/ft_putchar_fd.c \
+				${SUBDIR}/putfd/ft_putendl_fd.c \
+				${SUBDIR}/putfd/ft_putnbr_fd.c \
+				${SUBDIR}/putfd/ft_putstr_fd.c \
+			${SUBDIR}/str/ft_atoi.c \
+				${SUBDIR}/str/ft_bzero.c \
+				${SUBDIR}/str/ft_strchr.c \
+				${SUBDIR}/str/ft_striteri.c \
+				${SUBDIR}/str/ft_strlcat.c \
+				${SUBDIR}/str/ft_strlcpy.c \
+				${SUBDIR}/str/ft_strlen.c \
+				${SUBDIR}/str/ft_strncmp.c \
+				${SUBDIR}/str/ft_strnstr.c \
+				${SUBDIR}/str/ft_strrchr.c \
+			${SUBDIR}/malloc/ft_calloc.c \
+				${SUBDIR}/malloc/ft_itoa.c \
+				${SUBDIR}/malloc/ft_split.c \
+				${SUBDIR}/malloc/ft_strdup.c \
+				${SUBDIR}/malloc/ft_strjoin.c \
+				${SUBDIR}/malloc/ft_strmapi.c \
+				${SUBDIR}/malloc/ft_strtrim.c \
+				${SUBDIR}/malloc/ft_substr.c
 
-SRCS	=	${SUBDIR}/ft_atoi.c\
-			${SUBDIR}/ft_bzero.c\
-			${SUBDIR}/ft_calloc.c\
-			${SUBDIR}/ft_gnl.c\
-			${SUBDIR}/ft_isalnum.c\
-			${SUBDIR}/ft_isalpha.c\
-			${SUBDIR}/ft_isascii.c\
-			${SUBDIR}/ft_isdigit.c\
-			${SUBDIR}/ft_isprint.c\
-			${SUBDIR}/ft_itoa.c\
-			${SUBDIR}/ft_lstadd_back.c\
-			${SUBDIR}/ft_lstadd_front.c\
-			${SUBDIR}/ft_lstclear.c\
-			${SUBDIR}/ft_lstdelone.c\
-			${SUBDIR}/ft_lstiter.c\
-			${SUBDIR}/ft_lstlast.c\
-			${SUBDIR}/ft_lstmap.c\
-			${SUBDIR}/ft_lstnew.c\
-			${SUBDIR}/ft_lstsize.c\
-			${SUBDIR}/ft_memchr.c\
-			${SUBDIR}/ft_memcmp.c\
-			${SUBDIR}/ft_memcpy.c\
-			${SUBDIR}/ft_memmove.c\
-			${SUBDIR}/ft_memset.c\
-			${SUBDIR}/ft_printf.c\
-			${SUBDIR}/ft_putchar_fd.c\
-			${SUBDIR}/ft_putendl_fd.c\
-			${SUBDIR}/ft_putnbr_fd.c\
-			${SUBDIR}/ft_putstr_fd.c\
-			${SUBDIR}/ft_split.c\
-			${SUBDIR}/ft_strchr.c\
-			${SUBDIR}/ft_strdup.c\
-			${SUBDIR}/ft_striteri.c\
-			${SUBDIR}/ft_strjoin.c\
-			${SUBDIR}/ft_strlcat.c\
-			${SUBDIR}/ft_strlcpy.c\
-			${SUBDIR}/ft_strlen.c\
-			${SUBDIR}/ft_strmapi.c\
-			${SUBDIR}/ft_strncmp.c\
-			${SUBDIR}/ft_strnstr.c\
-			${SUBDIR}/ft_strrchr.c\
-			${SUBDIR}/ft_strtrim.c\
-			${SUBDIR}/ft_substr.c\
-			${SUBDIR}/ft_tolower.c\
-			${SUBDIR}/ft_toupper.c\
+SUBDIR	=	srcs
 
-OBJ		= $(patsubst ${SUBDIR}/%.c, ${OBJDIR}/%.o, ${SRCS})
+INCL	=	./
 
-NAME	= libft.a
+DEPS	=	${INCL}libft.h \
+			${SRCS}
 
-CFLAGS	= -Wall -Werror -Wextra -O2
+OBJ		=	$(SRCS:${SUBDIR}/%.c=${OBJDIR}/%.o)
+
+OBJDIR	=	objs
+
+SRCTREE	=	$(shell find ${SUBDIR} -type d)
+
+OBJTREE	=	$(SRCTREE:${SUBDIR}%=${OBJDIR}%)
+
+NAME	=	libft.a
+
+CFLAGS	=	-Wall -Werror -Wextra -O2
+
+DFLAGS	=	-g3 -fsanitize=address -fsanitize=leak
 
 CC = cc
 
@@ -61,21 +84,35 @@ CGRN = \033[1;32m
 CYEL = \033[1;33m
 RSET = \033[0m
 
-${NAME}:	${OBJ}
+bonus:	${NAME}
+
+all:	${NAME}
+
+${NAME}:	${DEPS}
+			@${MAKE} ${OBJ}
 			@ar rc ${NAME} ${OBJ}
 			@printf "│\t${CGRN}${NAME}${RSET} Compiled!\n"
 
 
 ${OBJDIR}/%.o:	${SUBDIR}/%.c | ${OBJDIR}
-				@printf "│\t > Compiling ${CYEL}$<${RSET} for ${CGRN}${NAME}${RSET}...\r"
-				@${CC} ${CFLAGS} -c $< -o $@
+				@if [[ $(if $(filter dbg,${MAKECMDGOALS}),1,0) == "1" ]]; then \
+					printf "│\t > ${CYEL}DEBUG${RSET} Compiling ${CYEL}$<${RSET} with ${CYEL}${DFLAGS}${RSET}...\r"; \
+					${CC} ${DFLAGS} -c $< -o $@ -I${INCL}; \
+				else \
+					printf "│\t > Compiling ${CYEL}$<${RSET} for ${CGRN}${NAME}${RSET}...\r"; \
+					${CC} ${CFLAGS} -c $< -o $@ -I${INCL}; \
+				fi
 				@printf "\33[2K"
 
 ${OBJDIR}:
 		@printf "│\tCreating ${CYEL}${OBJDIR}${RSET} for ${CGRN}${NAME}${RSET}\n"
-		@mkdir -p $@
+		@mkdir -p ${OBJTREE}
 
-all:	${NAME}
+debug:
+		@rm -rf objs
+		@${MAKE} ${OBJ} dbg
+		@ar rc ${NAME} ${OBJ}
+		@printf "│\t${CYEL}DEBUG${RSET} ${CGRN}${NAME}${RSET} compiled!\n"
 
 clean:
 		@if [ -d "./${OBJDIR}" ]; then \
@@ -91,10 +128,11 @@ fclean:	clean
 			printf "│\t${CYEL}${NAME}${RSET} already removed!\n"; \
 		fi
 
-re:		
+re:
 		@printf "\tCleaning and ${CGRN}recompiling${RSET}...\n"
 		@${MAKE} fclean
 		@${MAKE} all
 
-
+export MAKEFLAGS += --silent
 .PHONY: all fclean clean re
+$(eval dbg:;@:)
