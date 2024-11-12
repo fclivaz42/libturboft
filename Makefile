@@ -6,7 +6,7 @@
 #    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 00:27:54 by fclivaz           #+#    #+#              #
-#    Updated: 2024/11/05 03:14:50 by fclivaz          ###   LAUSANNE.ch        #
+#    Updated: 2024/11/12 16:56:50 by fclivaz          ###   LAUSANNE.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS	=	${SUBDIR}/char/ft_isalnum.c \
 				${SUBDIR}/char/ft_isascii.c \
 				${SUBDIR}/char/ft_isdigit.c \
 				${SUBDIR}/char/ft_isprint.c \
+				${SUBDIR}/char/ft_isspace.c \
 				${SUBDIR}/char/ft_tolower.c \
 				${SUBDIR}/char/ft_toupper.c \
 			${SUBDIR}/extras/ft_gnl.c \
@@ -48,6 +49,7 @@ SRCS	=	${SUBDIR}/char/ft_isalnum.c \
 				${SUBDIR}/putfd/ft_putnbr_fd.c \
 				${SUBDIR}/putfd/ft_putstr_fd.c \
 			${SUBDIR}/str/ft_atoi.c \
+				${SUBDIR}/str/ft_atoi_base.c \
 				${SUBDIR}/str/ft_bzero.c \
 				${SUBDIR}/str/ft_strchr.c \
 				${SUBDIR}/str/ft_striteri.c \
