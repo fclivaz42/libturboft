@@ -6,7 +6,7 @@
 #    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 00:27:54 by fclivaz           #+#    #+#              #
-#    Updated: 2024/11/26 04:20:11 by fclivaz          ###   LAUSANNE.ch        #
+#    Updated: 2024/11/26 05:35:52 by fclivaz          ###   LAUSANNE.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ SRCS	=	${SUBDIR}/char/ft_isalnum.c \
 				${SUBDIR}/str/ft_strlcat.c \
 				${SUBDIR}/str/ft_strlcpy.c \
 				${SUBDIR}/str/ft_strlen.c \
+				${SUBDIR}/str/ft_strncat.c \
 				${SUBDIR}/str/ft_strncmp.c \
 				${SUBDIR}/str/ft_strnstr.c \
 				${SUBDIR}/str/ft_strrchr.c \

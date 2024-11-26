@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/26 04:19:19 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2024/11/26 05:35:19 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ typedef struct s_list
 }	t_list;
 
 typedef long long	t_llong;
+
+# ifndef ALNUM
+#  define ALNUM "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# endif
 
 /// --- CHAR OPERATORS --- ///
 
@@ -64,6 +68,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t	ft_strlen(const char *src);
 size_t	ft_strlcpy(char *dst, const char *src, size_t sus);
 size_t	ft_strlcat(char *dst, const char *src, size_t sus);
+char	*ft_strncat(char *dst, const char *src, size_t ssize);
 char	ft_strtol(const char *nptr, long *nbr, const int base);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
