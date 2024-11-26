@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/12 17:27:40 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2024/11/26 04:19:19 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef long long	t_llong;
 
 /// --- CHAR OPERATORS --- ///
 
@@ -57,11 +59,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int		ft_atoi(const char *nptr);
 int		ft_atoi_base(const char *nptr, const int base);
+long	ft_atol_base(const char *nptr, const int base);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t	ft_strlen(const char *src);
 size_t	ft_strlcpy(char *dst, const char *src, size_t sus);
 size_t	ft_strlcat(char *dst, const char *src, size_t sus);
-char	ft_strtol(const char *str, long *nbr, const int base);
+char	ft_strtol(const char *nptr, long *nbr, const int base);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -79,6 +82,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_ltoa(long n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

@@ -6,53 +6,43 @@
 /*   By: fclivaz <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:06:23 by fclivaz           #+#    #+#             */
-/*   Updated: 2023/09/04 16:17:49 by fclivaz          ###   ########.fr       */
+/*   Updated: 2024/11/26 04:15:55 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-static int	nbrlen(long int nbr)
+char	*convert(long k, size_t size, size_t *pos, int neg)
 {
-	int	len;
+	char	*ret;
 
-	len = 0;
-	if (nbr < 0)
+	ret = NULL;
+	if (k < 0 && ++neg)
+		k *= -1;
+	if (k >= 10)
+		ret = convert(k / 10, size + 1, pos, neg);
+	if (ret == NULL)
 	{
-		len++;
-		nbr = nbr * -1;
+		ret = ft_calloc(neg + size + 1, sizeof(char));
+		if (ret == NULL)
+			return (NULL);
+		*pos = 0;
+		if (neg)
+			ret[(*pos)++] = '-';
 	}
-	while (nbr >= 10)
-	{
-		nbr = nbr / 10;
-		len++;
-	}
-	return (len + 1);
+	ret[(*pos)++] = (k % 10) + '0';
+	return (ret);
 }
 
-char	*ft_itoa(int n)
+inline char	*ft_ltoa(long n)
 {
-	long int	k;
-	int			i;
-	char		*str;
+	size_t	pos;
 
-	k = n;
-	i = nbrlen(k);
-	str = (char *)ft_calloc(i + 1, sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	str[i] = 0;
-	if (k < 0)
-	{
-		str[0] = '-';
-		k = k * -1;
-	}
-	while (k >= 10)
-	{
-		str[i - 1] = (char)((k % 10) + '0');
-		k = k / 10;
-		i--;
-	}
-	str[i - 1] = ((char)(k + '0'));
-	return (str);
+	pos = 0;
+	return (convert(n, 1, &pos, 0));
+}
+
+inline char	*ft_itoa(int n)
+{
+	return (ft_ltoa(n));
 }
