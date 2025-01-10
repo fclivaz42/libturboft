@@ -6,7 +6,7 @@
 /*   By: fclivaz <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:42:29 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/05 03:16:09 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/10 21:08:15 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 		array[++x] = splitter(s, c);
 		if (array[x] == NULL)
 		{
-			ft_arrayfree(array);
+			ft_arrayfree((void **)array);
 			return (NULL);
 		}
 		while (*s++ != c)

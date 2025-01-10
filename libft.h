@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/10 20:48:30 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/10 21:15:30 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,12 @@ size_t	ft_lstsize(t_list *lst);
 
 /// --- FT_PRINTF --- ///
 
+// Prints the formatted string '*str' with a variadic amount of arguments.
+// Returns the amount of characters written.
 int		ft_printf(const char *str, ...);
+
+// Same as ft_printf(), but writes to the given 'fd' instead.
+int		ft_fprintf(int fd, const char *str, ...);
 
 /// --- GET_NEXT_LINE --- ///
 
