@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrayfree.c                                     :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 02:55:33 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/10 20:05:03 by fclivaz          ###   LAUSANNE.ch       */
+/*   Created: 2025/01/10 19:37:29 by fclivaz           #+#    #+#             */
+/*   Updated: 2025/01/10 19:44:57 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_arrayfree(void **array)
+size_t	ft_tablen(const void **tab)
 {
-	char	**fr;
+	size_t	len;
 
-	if (!array)
-		return ;
-	fr = (char **)array - 1;
-	while (*++fr)
-		free(*fr);
-	free(array);
+	if (!tab)
+		return (0);
+	len = 0;
+	while (tab[len] != NULL)
+		++len;
+	return (len);
 }
