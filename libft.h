@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/18 04:01:01 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/18 04:32:17 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	*ft_strncat(char *dst, const char *src, size_t ssize);
 // Converts string nptr to an long integer of base 'base', between 2 and 36.
 // Said long will be set in *nbr.
 // A pointer to the first character after the number will be returned.
-char	*ft_strtol(char *nptr, long *nbr, const int base);
+char	*ft_strtol(const char *nptr, long *nbr, const int base);
 
 // Returns a pointer to the first occuring 'c' in '*s'.
 // NULL if nothing is found.
