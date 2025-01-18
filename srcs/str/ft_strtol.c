@@ -6,13 +6,13 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:07:03 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/26 04:37:45 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/18 04:00:18 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-char	ft_strtol(const char *nptr, long *nbr, const int base)
+char	*ft_strtol(char *nptr, long *nbr, const int base)
 {
 	long		i;
 	int			neg;
@@ -35,5 +35,5 @@ char	ft_strtol(const char *nptr, long *nbr, const int base)
 			i = (i * base) + ft_toupper(*nptr++) - 'A' + 10;
 	}
 	*nbr = i * neg;
-	return (*nptr);
+	return (nptr);
 }

@@ -6,7 +6,7 @@
 #    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 00:27:54 by fclivaz           #+#    #+#              #
-#    Updated: 2024/11/26 05:35:52 by fclivaz          ###   LAUSANNE.ch        #
+#    Updated: 2025/01/18 03:45:14 by fclivaz          ###   LAUSANNE.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ DEPS	=	${INCL}libft.h \
 
 OBJ		=	$(SRCS:${SUBDIR}/%.c=${OBJDIR}/%.o)
 
-OBJDIR	=	objs
+OBJDIR	=	obj
 
 SRCTREE	=	$(shell find ${SUBDIR} -type d)
 

@@ -6,13 +6,13 @@
 /*   By: fclivaz <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:40:29 by fclivaz           #+#    #+#             */
-/*   Updated: 2024/11/05 00:34:56 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/18 03:43:31 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-int	ft_isascii(int c)
+inline int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
