@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:37:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/18 04:32:17 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/18 14:54:35 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t sus);
 // Appends at most 'ssize' of 'src' to 'dst', then \0-terminates it.
 // 'dst' should be large enough to contain both strings.
 char	*ft_strncat(char *dst, const char *src, size_t ssize);
+
+// Converts string nptr to an integer of base 'base', between 2 and 36.
+// Said int will be set in *nbr.
+// A pointer to the first character after the number will be returned.
+char	*ft_strtoi(const char *nptr, int *nbr, const int base);
 
 // Converts string nptr to an long integer of base 'base', between 2 and 36.
 // Said long will be set in *nbr.
