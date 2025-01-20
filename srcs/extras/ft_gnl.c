@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:18:35 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/10 19:57:46 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/20 20:22:01 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ char	*get_next_line(int fd)
 		pos = gnlread(fd, 0, keep[fd], ft_strlen(keep[fd]));
 	else
 		pos = keep[fd];
-	if (!pos)
-		return (NULL);
-	if (pos[0] == 0)
+	if (!pos || pos[0] == 0)
 	{
-		free(pos);
-		keep[fd] = NULL;
-		return (NULL);
+		if (!pos)
+			free(keep[fd]);
+		else
+			free(pos);
+		return (keep[fd] = NULL);
 	}
 	ret = ft_substr(pos, 0, ft_strchr(pos, '\n') + 1 - pos);
 	keep[fd] = ft_substr(ft_strchr(pos, '\n'), 1, ft_strlen(pos));

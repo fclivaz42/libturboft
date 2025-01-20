@@ -6,12 +6,11 @@
 /*   By: fclivaz <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:59:26 by fclivaz           #+#    #+#             */
-/*   Updated: 2025/01/10 21:07:02 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2025/01/20 20:22:21 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
-#include <unistd.h>
 
 static void	print_hex(unsigned long int ptdr, char str, int *i, int fd)
 {
